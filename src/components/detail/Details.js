@@ -11,7 +11,7 @@ const Details = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`/api/v1/bookings/users/${tourId}`);
+        const response = await fetch(`https://murshid-pfe.onrender.com/api/v1/bookings/users/${tourId}`);
 
         if (response.ok) {
           const jsonData = await response.json();
