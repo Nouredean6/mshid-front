@@ -1,0 +1,61 @@
+/* Reusable Styles */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.profile-photo {
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.profile img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-data p {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: st;
+  width: 100%; /* Set a fixed width to make all fields the same size */
+}
+
+.profile-data p label {
+  flex: 1; /* Allow the label to take 100% of available space */
+  text-align: left; /* Adjust text alignment as needed */
+}
+
+.profile-data p input {
+  flex: 2; /* Allow the input to take 200% of available space */
+  margin-left: 1rem; /* Add some space between label and input */
+}
+
+
+.--btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.--btn-primary {
+  background-color: #007bff; /* Use your primary color here */
+  color: #fff;
+}
+
+/* Media Query for Small Screens */
+@media screen and (max-width: 600px) {
+  .profile-photo {
+    margin: auto;
+  }
+}

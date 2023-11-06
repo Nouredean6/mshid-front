@@ -1,0 +1,28 @@
+/* LogoutButton.css */
+.button-container {
+    padding: 0.75em 1em;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.15s;
+    background-color: #caae88;
+    /* Add more styles as needed */
+  }
+  
+  .button-container:hover {
+    background-color: #caae88; /* You can customize the hover effect */
+    color: #4d5d43; /* Text color on hover */
+  }
+  
+  .button {
+    width: 100%; /* Make the button expand to the full width of the container */
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    color: inherit;
+  }
+  
+  .button:hover {
+    color: inherit;
+  }
+  

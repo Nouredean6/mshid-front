@@ -1,0 +1,61 @@
+.add-tour {
+  margin-bottom: 5rem;
+}
+.add-tour .card {
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem;
+}
+.tora{
+  display: flex;
+  justify-content: space-between;
+}
+.tourname {
+ width: 65%;
+}
+
+.tourprice{
+  width: 30%;
+}
+.bt {
+font-size: 18px;
+  padding:10px 30px;
+}
+.add-tour form label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+.add-tour form input[type="text"], .add-tour form input[type="number"], .add-tour form input[type="file"], .add-tour form input[type="email"], .add-tour form select, .add-tour form input[type="password"] {
+  display: block;
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 0.6rem;
+  margin: 1rem auto;
+  width: 100%;
+  border: 1px solid #777;
+  border-radius: 3px;
+  outline: none;
+}
+.group {
+  border: 1px solid var(--dark-blue);
+  padding: 5px;
+}
+.image-preview {
+  width: auto;
+  height: auto;
+  max-height: 280px;
+  /* background: var(--dark-blue); */
+  padding: 1rem;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.image-preview img {
+  width: 50%;
+  
+}
+.image-show {
+  display: block;
+}

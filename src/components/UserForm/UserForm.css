@@ -1,0 +1,47 @@
+.add-user {
+    margin-bottom: 5rem;
+  }
+  .add-user .card {
+    width: 100%;
+    max-width: 500px;
+    padding: 1rem;
+  }
+  .add-user form label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--color-dark);
+  }
+  .add-user form input[type="text"], .add-user form input[type="number"], .add-user form input[type="file"], .add-user form input[type="email"], .add-user form select, .add-user form input[type="password"] {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 300;
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 100%;
+    border: 1px solid #777;
+    border-radius: 3px;
+    outline: none;
+  }
+  .group {
+    border: 1px solid var(--dark-blue);
+    padding: 5px;
+  }
+  .image-preview {
+    width: auto;
+    height: auto;
+    max-height: 280px;
+    /* background: var(--dark-blue); */
+    padding: 1rem;
+    border-radius: 3px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .image-preview img {
+    width: 50%;
+    
+  }
+  .image-show {
+    display: block;
+  }
+  

@@ -1,0 +1,83 @@
+.tour-list {
+    color: #333;
+  }
+  .tour-list .table {
+    padding: 5px;
+    width: 100%;
+    overflow-x: auto;
+  }
+  .tour-list .table .search {
+    width: 100%;
+    max-width: 300px;
+  }
+  .tour-list .table table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1.4rem;
+  }
+  .tour-list .table table thead {
+    border-top: 2px solid var(--light-blue);
+    border-bottom: 2px solid var(--light-blue);
+  }
+  .tour-list .table table th {
+    border: 1px solid #eee;
+  }
+  .tour-list .table table th, .tour-list .table table td {
+    vertical-align: top;
+    text-align: left;
+    padding: 8px;
+  }
+  .tour-list .table table th.icons, .tour-list .table table td.icons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .tour-list .table table th.icons > *, .tour-list .table table td.icons > * {
+    margin-right: 7px;
+    cursor: pointer;
+    vertical-align: middle;
+    align-self: center;
+  }
+  .tour-list .table table tr {
+    border-bottom: 1px solid #ccc;
+  }
+  .tour-list .table table tr:nth-child(even) {
+    background-color: #fff;
+  }
+  .tour-list .table table tbody tr:hover {
+    cursor: pointer;
+    background-color: rgba(31, 147, 255, 0.3);
+  }
+  .tour-image{
+    width:50px;
+    height: 50px;
+  }
+  .pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    font-size: 1rem;
+  }
+  
+  .pagination .page-num {
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: normal;
+    color: #000000;
+    border: 1px solid #4d5d43;
+    margin: 2px;
+  }
+  
+  .pagination .page-num:hover {
+    color: #ffffff;
+    background-color: #688e51;
+    translate: scale(1.5);
+  }
+  .activePage {
+    color: #000000;
+    background-color: #4d5d43;
+    height: 100%;
+  }
