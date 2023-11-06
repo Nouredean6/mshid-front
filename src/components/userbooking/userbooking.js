@@ -46,7 +46,7 @@ const UserBooking = () => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(`/api/v1/bookings/user/${userId}`);
+        const response = await fetch(`https://murshid-pfe.onrender.com/api/v1/bookings/user/${userId}`);
         // const response = await fetch(`/api/v1/bookings`);
         
         if (response.ok) {
