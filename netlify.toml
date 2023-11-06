@@ -1,0 +1,4 @@
+[build]
+  # Specify your custom installation command here
+  command = "npm install --force"
+  
