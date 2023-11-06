@@ -45,7 +45,7 @@ const Booking = () => {
     const fetchData = async () => {
       try {
         // const response = await fetch(`/api/v1/bookings/${userId}`);
-        const response = await fetch(`/api/v1/bookings`);
+        const response = await fetch(`https://murshid-pfe.onrender.com/api/v1/bookings`);
 
         if (response.ok) {
           const jsonData = await response.json();
