@@ -53,7 +53,7 @@ function ResetPassword() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`http://localhost:3000/reset-password/${id}/${token}`, { password })
+      .post(`https://murshid-pfe.onrender.com/reset-password/${id}/${token}`, { password })
       .then((res) => {
         if (res.data.Status === 'Success') {
           navigate('/login');

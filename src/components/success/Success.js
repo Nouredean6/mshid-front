@@ -39,7 +39,7 @@ const Success = () => {
   useEffect(() => {
     let isMounted = true;
 
-    const successRequest = axios.post('http://localhost:5000/payment-success', { email });
+    const successRequest = axios.post('https://murshid-pfe.onrender.com/payment-success', { email });
 
     successRequest
       .then((res) => {

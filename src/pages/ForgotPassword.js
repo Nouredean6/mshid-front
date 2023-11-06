@@ -61,7 +61,7 @@ function ForgotPassword() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('http://localhost:3000/forgot-password', { email }) 
+      .post('https://murshid-pfe.onrender.com/forgot-password', { email }) 
       .then((res) => {
         if (res.data.Status === 'Success') {
 
