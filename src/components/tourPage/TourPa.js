@@ -103,7 +103,7 @@ const TourPage = () => {
   };
   const handleCreateBooking =async () => {
     await axios
-      .post(`http://localhost:3000/api/v1/bookings`, { tourId, userId, priceTour })
+      .post(`https://murshid-pfe.onrender.com/api/v1/bookings`, { tourId, userId, priceTour })
       .then((res) => {
         if (res.data.Status === 'Success') {
           toast.success('Booking Created');
