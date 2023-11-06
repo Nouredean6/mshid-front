@@ -17,7 +17,7 @@ function ContactForm() {
     e.preventDefault();
 
     try{
-      const response = await fetch('/contact',{
+      const response = await fetch('https://murshid-pfe.onrender.com/contact',{
         method: 'POST',
         headers: {
           'Content-Type' : 'application/json',
