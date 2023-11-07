@@ -23,7 +23,7 @@ function Tour() {
     try {
       const { data } = await axios.get(`${BACKEND_URL}/api/v1/tours`);
       setTours(data);
-      // setIsLoading(false);
+      setIsLoading(false);
     } catch (error) {
       // toast.error(error.message);
       // setIsLoading(false);
