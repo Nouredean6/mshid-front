@@ -12,7 +12,6 @@ import { BACKEND_URL } from "../../utils/react-backend-url";
 import DOMPurify from 'dompurify';
 import Skeleton, {SkeletonTheme} from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-import tourSkeleton from "./tourSkeleton";
 
 function Tour() {
    const [tours, setTours] = useState([]);
