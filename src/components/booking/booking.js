@@ -4,8 +4,11 @@ import { getUser } from '../../redux/features/auth/authService';
 import { SET_USER } from '../../redux/features/auth/authSlice';
 import { useDispatch } from 'react-redux';
 import "./booking.css";
+import Skeleton, {SkeletonTheme} from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const Booking = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
   const [selectedRows, setSelectedRows] = useState([]);
   const [userId, setUserId] = useState('');
@@ -50,6 +53,7 @@ const Booking = () => {
         if (response.ok) {
           const jsonData = await response.json();
           setData(jsonData.data.bookings);
+          setIsLoading(false);
         }
       } catch (error) {
         console.error('Error fetching data: ', error);
@@ -61,7 +65,33 @@ const Booking = () => {
 
   return (
   <div className="table">
-          {data.length === 0 ? (
+          {isLoading && (
+            <SkeletonTheme baseColor="#c0c0c0" highlightColor="#d0d0d0">
+                        <table>
+                        <thead>
+                          <tr>
+                            <th><Skeleton/></th>
+                            <th><Skeleton/></th>
+                            <th><Skeleton/></th>
+                            <th><Skeleton/></th>
+                            <th><Skeleton/></th>
+                            <th><Skeleton/></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+              <tr>
+                <td><Skeleton/></td>
+                <td><Skeleton/></td>
+                <td><Skeleton/></td>
+                <td><Skeleton/></td>
+                <td><Skeleton/></td>
+                <td><Skeleton/></td>
+              </tr>
+          </tbody>
+                      </table>
+                      </SkeletonTheme>            
+          ) }
+          {!isLoading && data.length === 0 ? (
             <p>-- No booking found...</p>
           ) : (
             <table>
@@ -95,29 +125,6 @@ const Booking = () => {
       <td>{"$" + priceTour}</td>
       <td>{bookedAt + " At " + bookedAtTime}</td>
       <td>{String(paid)}</td>
-      {/* <td>
-        <img className="tour-image" src={image?.filePath} alt="Tour" />
-      </td> */}
-      
-      <td className="icons">
-        {/* <span>
-          <Link to={`/tour-details/${_id}`}>
-            <AiOutlineEye size={25} color={"purple"} />
-          </Link>
-        </span> */}
-        {/* <span>
-          <Link to={`/edit-tour/${_id}`}>
-            <FaEdit size={20} color={"green"} />
-          </Link>
-        </span> */}
-        {/* <span>
-          <FaTrashAlt
-            size={20}
-            color={"red"}
-            onClick={() => confirmDelete(_id)}
-          />
-        </span> */}
-      </td>
     </tr>
   );
 })}

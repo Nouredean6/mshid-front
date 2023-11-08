@@ -4,7 +4,7 @@ import { getUser } from '../../redux/features/auth/authService';
 import { SET_USER } from '../../redux/features/auth/authSlice';
 import { useDispatch } from 'react-redux';
 import "./userbooking.css";
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import Skeleton, {SkeletonTheme} from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
 
@@ -13,7 +13,7 @@ const UserBooking = () => {
   const [selectedRows, setSelectedRows] = useState([]);
   const [userId, setUserId] = useState('');
   const dispatch = useDispatch();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   
 
@@ -22,10 +22,8 @@ const UserBooking = () => {
 
     async function getUserData() {
       try {
-        setIsLoading(true);
         const userData = await getUser();
         setUserId(userData._id);
-        setIsLoading(false);
 
         if (isMounted) {
           dispatch(SET_USER(userData));
@@ -45,9 +43,7 @@ const UserBooking = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setIsLoading(true);
         const response = await fetch(`https://murshid-pfe.onrender.com/api/v1/bookings/user/${userId}`);
-        // const response = await fetch(`/api/v1/bookings`);
         
         if (response.ok) {
           const jsonData = await response.json();
@@ -67,7 +63,28 @@ const UserBooking = () => {
   return (
     <SkeletonTheme baseColor="#e0e0e0" highlightColor="#f0f0f0">
   <div className="table">
-          {data.length === 0 ?<p>-- No booking found...</p>:
+          {isLoading && (
+            <table>
+            <thead>
+              <tr>
+                <th><Skeleton/></th>
+                <th><Skeleton/></th>
+                <th><Skeleton/></th>
+                <th><Skeleton/></th>
+              </tr>
+            </thead>
+            <tbody>
+
+    <tr>
+      <td><Skeleton/></td>
+      <td><Skeleton/></td>
+      <td><Skeleton/></td>
+      <td><Skeleton/></td>
+    </tr>
+</tbody>
+          </table>
+          )}
+          {!isLoading && data.length === 0 ?<p>-- No booking found...</p>:
            (
             <table>
               <thead>
@@ -80,8 +97,6 @@ const UserBooking = () => {
               </thead>
               <tbody>
   {data.map((d, index) => {
-    // const { _id, tourId, priceTour, createdAt } = d;
-    // const {name} =tourId;
     const _id = d._id;
   const name = d.tourId?.name;
   const priceTour = d.priceTour;
@@ -96,29 +111,6 @@ const UserBooking = () => {
         <td>{name}</td>
         <td>{"$" + priceTour}</td>
         <td>{bookedAt + " At " + bookedAtTime}</td>
-        {/* <td>
-          <img className="tour-image" src={image.filePath} alt="Tour" />
-        </td> */}
-        
-        <td className="icons">
-          {/* <span>
-            <Link to={`/tour-details/${_id}`}>
-              <AiOutlineEye size={25} color={"purple"} />
-            </Link>
-          </span> */}
-          {/* <span>
-            <Link to={`/edit-tour/${_id}`}>
-              <FaEdit size={20} color={"green"} />
-            </Link>
-          </span> */}
-          {/* <span>
-            <FaTrashAlt
-              size={20}
-              color={"red"}
-              onClick={() => confirmDelete(_id)}
-            />
-          </span> */}
-        </td>
       </tr>
     );
   })}

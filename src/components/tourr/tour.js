@@ -40,11 +40,6 @@ function Tour() {
       <h1> Recent tours </h1>
       <p>You can discover any destination using google maps</p>
       <div className="tourcard">
-      {/* {isLoading &&(
-        <p>
-        <Skeleton count={10}/>
-        </p>
-      )} */}
       {isLoading ? (
   <SkeletonTheme baseColor="#c0c0c0" highlightColor="#d0d0d0">
     <div className="t-card">
@@ -138,8 +133,6 @@ function Tour() {
       </div>
 </div>
     </SkeletonTheme>
-
-  
 ) : (
   tours.map((tour, index) => {
     const { _id, name, price, image, description, summary } = tour;
