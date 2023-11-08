@@ -47,7 +47,6 @@ const UserBooking = () => {
         setIsLoading(false);
         if (response.ok) {
           const jsonData = await response.json();
-
           setData(jsonData.data.bookings);
 
         }
