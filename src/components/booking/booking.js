@@ -70,11 +70,9 @@ const Booking = () => {
                 <div className="table">
                         <table>
                         <thead>
-                        <Skeleton width={'100%'}/>
-                          {/* <tr>
+                          <tr>
                             <Skeleton width={'100%'}/>
-                            <th><Skeleton/></th>
-                            <th><Skeleton/></th>
+                            {/* <th><Skeleton/></th>
                             <th><Skeleton/></th>
                             <th><Skeleton/></th>
                             <th><Skeleton/></th>
