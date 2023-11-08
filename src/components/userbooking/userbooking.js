@@ -50,8 +50,10 @@ const UserBooking = () => {
           setData(jsonData.data.bookings);
           setIsLoading(false)
 
+        }else{
+          setIsLoading(false);
         }
-        setIsLoading(false);
+        
 
       } catch (error) {
         console.error('Error fetching data: ', error);
