@@ -43,23 +43,32 @@ const UserBooking = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://murshid-pfe.onrender.com/api/v1/bookings/user/${userId}`);
+        const response = await fetch(`https://murshid-pfe.onrender.com/api/v1/bookings`);
+  
         if (response.ok) {
           const jsonData = await response.json();
-
-          setData(jsonData.data.bookings);
-          setIsLoading(false)
-
+          const bookings = jsonData.data.bookings;
+  
+          if (bookings.length === 0) {
+            // Handle the case when there's no data (empty response)
+            // (No need to set isLoading here, because it's set outside)
+          } else {
+            // Set the data when there is data
+            setData(bookings);
+          }
+        } else {
+          console.error('Request failed with status:', response.status);
         }
-        
-
       } catch (error) {
         console.error('Error fetching data: ', error);
+      } finally {
+        setIsLoading(false); // Set isLoading to false in all cases (whether if, else, or catch blocks are executed).
       }
     };
-
+  
     fetchData();
-  }, [userId]);
+  }, []);
+  
 
   return (
     <SkeletonTheme baseColor="#e0e0e0" highlightColor="#f0f0f0">
