@@ -71,12 +71,13 @@ const Booking = () => {
                         <table>
                         <thead>
                           <tr>
+                            <Skeleton/>
+                            {/* <th><Skeleton/></th>
                             <th><Skeleton/></th>
                             <th><Skeleton/></th>
                             <th><Skeleton/></th>
                             <th><Skeleton/></th>
-                            <th><Skeleton/></th>
-                            <th><Skeleton/></th>
+                            <th><Skeleton/></th> */}
                           </tr>
                         </thead>
                         <tbody>
