@@ -50,8 +50,6 @@ const UserBooking = () => {
           setData(jsonData.data.bookings);
           setIsLoading(false)
 
-        }else{
-          setIsLoading(false);
         }
         
 
