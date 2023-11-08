@@ -47,23 +47,33 @@ const Booking = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const response = await fetch(`/api/v1/bookings/${userId}`);
         const response = await fetch(`https://murshid-pfe.onrender.com/api/v1/bookings`);
-
+  
         if (response.ok) {
           const jsonData = await response.json();
-          setData(jsonData.data.bookings);
-          setIsLoading(false);
-        }else{
-          setIsLoading(false);
+          const bookings = jsonData.data.bookings;
+  
+          if (bookings.length === 0) {
+            // Handle the case when there's no data (empty response)
+            setIsLoading(false);
+          } else {
+            // Set the data when there is data
+            setData(bookings);
+            setIsLoading(false);
+          }
+        } else {
+          console.error('Request failed with status:', response.status);
+          setIsLoading(false); // Set isLoading to false in case of a failed request.
         }
       } catch (error) {
         console.error('Error fetching data: ', error);
+        setIsLoading(false); // Set isLoading to false in case of an error.
       }
     };
-
+  
     fetchData();
-  }, [userId]);
+  }, []);
+  
 
   return (
   <div className="table">
