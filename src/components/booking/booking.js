@@ -56,7 +56,6 @@ const Booking = () => {
           setIsLoading(false);
         }else{
           setIsLoading(false);
-
         }
       } catch (error) {
         console.error('Error fetching data: ', error);
