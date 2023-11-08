@@ -71,13 +71,13 @@ const Booking = () => {
                         <table>
                         <thead>
                           <tr>
-                            <Skeleton width={'100%'}/>
-                            {/* <th><Skeleton/></th>
                             <th><Skeleton/></th>
                             <th><Skeleton/></th>
                             <th><Skeleton/></th>
                             <th><Skeleton/></th>
-                          </tr> */}
+                            <th><Skeleton/></th>
+                            <th><Skeleton/></th>
+                          </tr>
                         </thead>
                         <tbody>
               <tr>
