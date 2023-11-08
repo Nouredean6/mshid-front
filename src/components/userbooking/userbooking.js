@@ -64,6 +64,7 @@ const UserBooking = () => {
     <SkeletonTheme baseColor="#e0e0e0" highlightColor="#f0f0f0">
   <div className="table">
           {isLoading && (
+            <div className='table'>
             <table>
             <thead>
               <tr>
@@ -74,25 +75,50 @@ const UserBooking = () => {
               </tr>
             </thead>
             <tbody>
-
     <tr>
       <td><Skeleton/></td>
       <td><Skeleton/></td>
       <td><Skeleton/></td>
       <td><Skeleton/></td>
     </tr>
+    <tr>
+      <td><Skeleton/></td>
+      <td><Skeleton/></td>
+      <td><Skeleton/></td>
+      <td><Skeleton/></td>
+    </tr>
+    <tr>
+      <td><Skeleton/></td>
+      <td><Skeleton/></td>
+      <td><Skeleton/></td>
+      <td><Skeleton/></td>
+    </tr>
+    <tr>
+      <td><Skeleton/></td>
+      <td><Skeleton/></td>
+      <td><Skeleton/></td>
+      <td><Skeleton/></td>
+    </tr>
+    <tr>
+      <td><Skeleton/></td>
+      <td><Skeleton/></td>
+      <td><Skeleton/></td>
+      <td><Skeleton/></td>
+    </tr>
+    
 </tbody>
           </table>
+          </div>
           )}
           {!isLoading && data.length === 0 ?<p>-- No booking found...</p>:
            (
             <table>
               <thead>
                 <tr>
-                  <th>Index</th>
-                  <th>Tour Name</th>
-                  <th>Price</th>
-                  <th>Booked at</th>
+                  <th>{isLoading ? <Skeleton/> : 'Index'}</th>
+                  <th>{isLoading ? <Skeleton/> : 'Tour Name'}</th>
+                  <th>{isLoading ? <Skeleton/> : 'Price'}</th>
+                  <th>{isLoading ? <Skeleton/> : 'Booked at'}</th>
                 </tr>
               </thead>
               <tbody>
