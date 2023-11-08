@@ -49,7 +49,6 @@ const UserBooking = () => {
           const jsonData = await response.json();
 
           setData(jsonData.data.bookings);
-          setIsLoading(false)
 
         }
       } catch (error) {
