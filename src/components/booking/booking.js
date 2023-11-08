@@ -54,6 +54,9 @@ const Booking = () => {
           const jsonData = await response.json();
           setData(jsonData.data.bookings);
           setIsLoading(false);
+        }else{
+          setIsLoading(false);
+
         }
       } catch (error) {
         console.error('Error fetching data: ', error);
